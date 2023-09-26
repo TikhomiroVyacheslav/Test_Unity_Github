@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Run : MonoBehaviour
@@ -20,7 +18,12 @@ public class Run : MonoBehaviour
         ball = GetComponent<BallChar>();
         speed = ball.speed;
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
-        if (Input.GetButton("Horizontal"))
+        if (Input.GetButton("Horizontal") && Input.GetKey(KeyCode.LeftShift))
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * 2 * Time.deltaTime);
+        else if (Input.GetButton("Horizontal"))
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
     }
 }
+        
+            
+            
