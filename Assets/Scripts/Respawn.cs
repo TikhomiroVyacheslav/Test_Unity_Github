@@ -7,6 +7,6 @@ public class Respawn : MonoBehaviour
     void Update()
     {
         if (transform.position.y < -5f)
-            transform.position = new Vector3(-5f, -1.5f, 0);
+            transform.position = new Vector3(-5.11499977f, -1.37600005f, -0.023249682f);
     }
 }
