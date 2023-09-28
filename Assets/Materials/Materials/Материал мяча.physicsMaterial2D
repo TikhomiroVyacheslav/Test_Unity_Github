@@ -8,4 +8,4 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B \u043C\u044F\u0447\u0430"
   friction: 0.3
-  bounciness: 0.5
+  bounciness: 0.3
