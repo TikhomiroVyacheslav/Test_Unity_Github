@@ -23,7 +23,13 @@ public class GetDamage : MonoBehaviour
     {
         if (transform.position.y < -5f)
         {
+            if (ball.isDoubleJump)
+                SpawnJumpBooster();
+            if (ball.isFastRun)
+                SpawnSpeedBooster();
             ball.lives -= 1;
+            ball.isDoubleJump = false;
+            ball.isFastRun = false;
             Respawn();
         }
     }
@@ -41,5 +47,17 @@ public class GetDamage : MonoBehaviour
             else
                 ball.hearts[i].enabled = false;
         }
+    }
+
+    private void SpawnJumpBooster()
+    {
+        Instantiate(Resources.Load("Boosters/JumpBooster"), new Vector3(-3.0f, -1.2f, 0), Quaternion.identity);
+        
+    }
+
+    private void SpawnSpeedBooster()
+    {
+        Instantiate(Resources.Load("Boosters/SpeedBooster"), new Vector3(4.4f, 0.9f, 0), Quaternion.identity);
+
     }
 }
