@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 153551839}
   - component: {fileID: 153551843}
   - component: {fileID: 153551844}
-  - component: {fileID: 153551845}
   - component: {fileID: 153551847}
   - component: {fileID: 153551848}
   - component: {fileID: 153551846}
@@ -316,7 +315,7 @@ MonoBehaviour:
   boosters:
   - {fileID: 1539020785}
   - {fileID: 247569426}
-  aliveHeart: {fileID: 21300000, guid: b71038196c5ef22498ce58fa09471e0a, type: 3}
+  aliveHeart: {fileID: 21300000, guid: d21e96857e8a6ff4a8e76ec93e15069e, type: 3}
   deadHeart: {fileID: 21300000, guid: 91d8d2b07907a0d4fabba59a37f83c05, type: 3}
 --- !u!50 &153551840
 Rigidbody2D:
@@ -383,18 +382,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4be4e3b0ba6496c4abe679b734227e1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &153551845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153551838}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1afbdd575c5c649be988824fac1c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &153551846
@@ -1804,50 +1791,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1267008285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1267008287}
-  - component: {fileID: 1267008286}
-  m_Layer: 0
-  m_Name: LifeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1267008286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267008285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd29e9dfa1fed204489877fea7512784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1267008287
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267008285}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8162298, y: -6.6552567, z: 12.664392}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399003218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1803,7 @@ GameObject:
   - component: {fileID: 1399003221}
   - component: {fileID: 1399003220}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: "HP counter \u043D\u0430\u0434\u043F\u0438\u0441\u044C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2897,7 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e86fb809323c1e48a99219233dc46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1399003220}
+  Lives: {fileID: 1399003220}
   ball: {fileID: 153551839}
 --- !u!1001 &2208735193228923541
 PrefabInstance:
@@ -3030,7 +2973,6 @@ SceneRoots:
   - {fileID: 2029816637}
   - {fileID: 42048914}
   - {fileID: 141902374}
-  - {fileID: 1267008287}
   - {fileID: 153551842}
   - {fileID: 4181637914326887005}
   - {fileID: 2208735193228923541}
