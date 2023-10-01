@@ -5,6 +5,7 @@ public class Run : MonoBehaviour
 {
     private BallChar ball;
     private float speed;
+    private Animator anim;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -12,6 +13,7 @@ public class Run : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,6 +25,8 @@ public class Run : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * 2 * Time.deltaTime);
         else if (Input.GetButton("Horizontal"))
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+
+        anim.SetBool("FastRun", Input.GetButton("Horizontal") && Input.GetKey(KeyCode.LeftShift) && ball.isFastRun);
     }
 }
         
