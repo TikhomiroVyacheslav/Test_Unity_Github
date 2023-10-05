@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c39de9da63f4b484293db9dad615c9fd
+guid: 0259ccc42d6509e408c221c7dc4a1742
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,34 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0445\u0430\u0448_0"
+      name: "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2181
-        height: 1547
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11044908372f9a641a25f514e3edcd26
-      internalID: 1862870581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u0445\u0430\u0448_1"
-      rect:
-        serializedVersion: 2
-        x: 2813
-        y: 0
-        width: 2181
-        height: 1547
+        x: 642
+        y: 720
+        width: 1462
+        height: 1462
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +124,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25adfd6c660e9964f83d732c56f0aa7b
-      internalID: 597222098
+      spriteID: 9eb0e492eee7a314cae4be5721c82a56
+      internalID: -1014750811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_1"
+      rect:
+        serializedVersion: 2
+        x: 3329
+        y: 783
+        width: 1468
+        height: 1457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95679e08d29e984dbd66acc6da7c3a0
+      internalID: 1183531014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_2"
+      rect:
+        serializedVersion: 2
+        x: 6151
+        y: 725
+        width: 1463
+        height: 1463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ae808256c33d6429c3c4a8e456c87b
+      internalID: -1479160036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_3"
+      rect:
+        serializedVersion: 2
+        x: 8678
+        y: 706
+        width: 1468
+        height: 1463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6da5e66d11594842ba13771b6875a38
+      internalID: -630759770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_4"
+      rect:
+        serializedVersion: 2
+        x: 11094
+        y: 661
+        width: 1468
+        height: 1463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99538e11b461bc34b817b84cfa28a1d9
+      internalID: 2057795638
       vertices: []
       indices: 
       edges: []
@@ -162,8 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u0445\u0430\u0448_0": 1862870581
-      "\u0445\u0430\u0448_1": 597222098
+      "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_0": -1014750811
+      "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_1": 1183531014
+      "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_2": -1479160036
+      "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_3": -630759770
+      "\u041A\u0430\u0447\u0435\u043D\u0438\u0435_4": 2057795638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

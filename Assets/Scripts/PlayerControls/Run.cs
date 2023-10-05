@@ -25,8 +25,8 @@ public class Run : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * 2 * Time.deltaTime);
         else if (Input.GetButton("Horizontal"))
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-
-        anim.SetBool("FastRun", Input.GetButton("Horizontal") && Input.GetKey(KeyCode.LeftShift) && ball.isFastRun);
+        if (Input.GetKey(KeyCode.F))
+            anim.SetBool("F_buttoned", true);
     }
 }
         
