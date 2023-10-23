@@ -16,4 +16,6 @@ public class BallChar : MonoBehaviour
     [SerializeField] public Image[] boosters;
     [SerializeField] public Sprite aliveHeart;
     [SerializeField] public Sprite deadHeart;
+
+    [SerializeField] public int coins = 0;
 }

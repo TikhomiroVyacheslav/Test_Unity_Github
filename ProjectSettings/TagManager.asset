@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Booster
   - SpeedBooster
+  - Chest
+  - Coins
   layers:
   - Default
   - TransparentFX
