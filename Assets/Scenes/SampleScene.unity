@@ -533,7 +533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 153551839}
-  CoinValue: {fileID: 728005985}
 --- !u!95 &153551849
 Animator:
   serializedVersion: 5

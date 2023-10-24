@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class TakeItem : MonoBehaviour
 {
     public BallChar ball;
-    public CoinValue CoinValue;
+    //public CoinValue CoinValue;
+    private int coins;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Booster"))
@@ -19,9 +20,11 @@ public class TakeItem : MonoBehaviour
         }
         else if (collision.CompareTag("Coins"))
         {
-            CoinValue = collision.gameObject.GetComponent <CoinValue>();
+            //CoinValue = collision.gameObject.GetComponent <CoinValue>();
+            coins = collision.gameObject.GetComponent<CoinValue>().value;
             Destroy(collision.gameObject);
-            ball.coins += CoinValue.value;
+            //ball.coins += CoinValue.value;
+            ball.coins += coins;
         }
     }
 }
