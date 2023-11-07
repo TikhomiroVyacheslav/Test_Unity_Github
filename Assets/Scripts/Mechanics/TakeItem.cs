@@ -23,6 +23,7 @@ public class TakeItem : MonoBehaviour
             //CoinValue = collision.gameObject.GetComponent <CoinValue>();
             coins = collision.gameObject.GetComponent<CoinValue>().value;
             Destroy(collision.gameObject);
+            //Destroy(collision.gameObject.transform.parent.gameObject);
             //ball.coins += CoinValue.value;
             ball.coins += coins;
         }

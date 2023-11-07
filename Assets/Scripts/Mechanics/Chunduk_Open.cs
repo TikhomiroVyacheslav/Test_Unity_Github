@@ -9,7 +9,7 @@ public class Chunduk_Open : MonoBehaviour
     [SerializeField] public GameObject eForChundick;
     [SerializeField] public GameObject Coin20;
     private bool chundickEntered;
-   
+    private Rigidbody2D rb;
 
 
 
@@ -23,8 +23,30 @@ public class Chunduk_Open : MonoBehaviour
         {
             anim.SetBool("Chest_opened", true);
            
-            GameObject newObject = Instantiate(Coin20, transform.localPosition + new Vector3(1.5f, 1.0f, 0.0f), Quaternion.identity);
-          
+            GameObject newObject = Instantiate(Coin20, transform.localPosition + new Vector3(1.5f, 0.5f, 0.0f), Quaternion.identity);
+            Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                // € бл€ хз что значат эта корутина и иенумератор, но C# ругалс€ когда был цикл фор в UPdate, поэтому так надо было
+                {
+                    StartCoroutine(RepeatCode(4));
+                }
+
+                IEnumerator RepeatCode(int repetitions)
+                {
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        GameObject newObject = Instantiate(Coin20, transform.localPosition + new Vector3(1.5f, 0.5f, 0.0f), Quaternion.identity);
+                        Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
+                        rb.AddForce(transform.up * 5, ForceMode2D.Impulse);
+                        rb.AddForce(transform.right * Random.Range(-3, +3), ForceMode2D.Impulse);
+
+                        yield return new WaitForSeconds(0.5f); //∆дем 0,5 сек
+                     }
+                }
+            }
         }
     }
 
