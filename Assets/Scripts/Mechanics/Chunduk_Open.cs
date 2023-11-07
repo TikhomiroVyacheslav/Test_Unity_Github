@@ -9,6 +9,7 @@ public class Chunduk_Open : MonoBehaviour
     [SerializeField] public GameObject eForChundick;
     [SerializeField] public GameObject Coin20;
     private bool chundickEntered;
+   
 
 
 
@@ -21,7 +22,9 @@ public class Chunduk_Open : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && chundickEntered == true)
         {
             anim.SetBool("Chest_opened", true);
-            GameObject newObject = Instantiate(Coin20, new Vector3(-7.86493778f, -0.429215103f, 0), Quaternion.identity);
+           
+            GameObject newObject = Instantiate(Coin20, transform.localPosition + new Vector3(1.5f, 1.0f, 0.0f), Quaternion.identity);
+          
         }
     }
 
