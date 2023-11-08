@@ -15,6 +15,13 @@ public class GetDamage : MonoBehaviour
 
     private void Respawn()
     {
+        if (ball.isDoubleJump)
+           SpawnJumpBooster();
+        if (ball.isFastRun)
+           SpawnSpeedBooster();
+        ball.lives -= 1;
+        ball.isDoubleJump = false;
+        ball.isFastRun = false;
         transform.position = new Vector3(-5.11499977f, -1.37600005f, -0.023249682f);
     }
 
@@ -22,13 +29,13 @@ public class GetDamage : MonoBehaviour
     {
         if (collision.CompareTag("DedZone"))
         {
-            if (ball.isDoubleJump)
-                SpawnJumpBooster();
-            if (ball.isFastRun)
-                SpawnSpeedBooster();
-            ball.lives -= 1;
-            ball.isDoubleJump = false;
-            ball.isFastRun = false;
+            //if (ball.isDoubleJump)
+            //    SpawnJumpBooster();
+            //if (ball.isFastRun)
+            //    SpawnSpeedBooster();
+            //ball.lives -= 1;
+            //ball.isDoubleJump = false;
+            //ball.isFastRun = false;
             Respawn();
         }
     }
@@ -65,13 +72,13 @@ public class GetDamage : MonoBehaviour
 
     private void SpawnJumpBooster()
     {
-        Instantiate(Resources.Load("Boosters/JumpBooster"), new Vector3(-3.0f, -1.2f, 0), Quaternion.identity);
+        Instantiate(Resources.Load("Prefabs/JumpBooster"), new Vector3(-3.0f, -1.2f, 0), Quaternion.identity);
         
     }
 
     private void SpawnSpeedBooster()
     {
-        Instantiate(Resources.Load("Boosters/SpeedBooster"), new Vector3(4.4f, 0.9f, 0), Quaternion.identity);
+        Instantiate(Resources.Load("Prefabs/SpeedBooster"), new Vector3(4.4f, 0.9f, 0), Quaternion.identity);
 
     }
 }
