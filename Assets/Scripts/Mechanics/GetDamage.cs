@@ -10,7 +10,6 @@ public class GetDamage : MonoBehaviour
     {
         if (ball.lives < 1)
             ball.lives = ball.maxLives;
-        CheckOutOfWorldDamage();
         HeartManager();
     }
 
@@ -19,9 +18,9 @@ public class GetDamage : MonoBehaviour
         transform.position = new Vector3(-5.11499977f, -1.37600005f, -0.023249682f);
     }
 
-    private void CheckOutOfWorldDamage()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (transform.position.y < -5f)
+        if (collision.CompareTag("DedZone"))
         {
             if (ball.isDoubleJump)
                 SpawnJumpBooster();
@@ -33,6 +32,21 @@ public class GetDamage : MonoBehaviour
             Respawn();
         }
     }
+    //private void CheckOutOfWorldDamage()
+    //{
+        
+    //    if (transform.position.y < -5f)
+    //    {
+    //        if (ball.isDoubleJump)
+    //            SpawnJumpBooster();
+    //        if (ball.isFastRun)
+    //            SpawnSpeedBooster();
+    //        ball.lives -= 1;
+    //        ball.isDoubleJump = false;
+    //        ball.isFastRun = false;
+    //        Respawn();
+    //    }
+    //}
 
     private void HeartManager()
     {

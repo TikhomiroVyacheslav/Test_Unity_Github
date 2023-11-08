@@ -9,6 +9,7 @@ TagManager:
   - Chest
   - Coins
   - Hero
+  - DedZone
   layers:
   - Default
   - TransparentFX
