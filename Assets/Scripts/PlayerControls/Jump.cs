@@ -12,21 +12,21 @@ public class Jump : MonoBehaviour
     private bool doubleJump;
 
     private Rigidbody2D rb;
-    private SpriteRenderer sprite;
+    public float rayDistance = 0.6f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         CheckGround();
-    }
+    }*/
 
     private void Update()
     {
+        CheckGround();
         ball = GetComponent<BallChar>();
         jumpForce = ball.jumpForce;
         isDoubleJump = ball.isDoubleJump;
@@ -45,10 +45,24 @@ public class Jump : MonoBehaviour
         }
     }
 
-    private void CheckGround()
+    /*private void CheckGround()
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.7f);
         isGrounded = collider.Length > 1;
+    }*/
+
+
+    private void CheckGround()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayDistance, LayerMask.GetMask("Ground"));
+        if (hit.collider != null)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 
     /*private void CheckGround()
