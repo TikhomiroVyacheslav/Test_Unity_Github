@@ -20,10 +20,20 @@ public class Run : MonoBehaviour
 
     void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
         ball = GetComponent<BallChar>();
         speed = ball.speed;
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+        if (horizontalInput > 0.01f)
+        {
+            transform.localScale = Vector3.one;
+        }
+        else if (horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-1,1,1);
+        }
+
         if (Input.GetButton("Horizontal") && Input.GetKey(KeyCode.LeftShift) && ball.isFastRun)
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * 2 * Time.deltaTime);

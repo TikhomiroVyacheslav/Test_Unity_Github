@@ -10,6 +10,7 @@ public class Jump : MonoBehaviour
     private bool isDoubleJump;
     private bool isGrounded = false;
     private bool doubleJump;
+    public Animator anim;
 
     private Rigidbody2D rb;
     public float rayDistance = 0.6f;
@@ -17,6 +18,7 @@ public class Jump : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     /*private void FixedUpdate()
@@ -32,10 +34,12 @@ public class Jump : MonoBehaviour
         isDoubleJump = ball.isDoubleJump;
         if (Input.GetButtonDown("Jump"))
         {
+            
             if (isGrounded)
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                 doubleJump = false;
+                
             }
             else if (!doubleJump && isDoubleJump)
             {
@@ -58,10 +62,12 @@ public class Jump : MonoBehaviour
         if (hit.collider != null)
         {
             isGrounded = true;
+            anim.SetBool("isGroundedAn", true);
         }
         else
         {
             isGrounded = false;
+            anim.SetBool("isGroundedAn", false);
         }
     }
 

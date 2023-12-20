@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48753241}
   - component: {fileID: 48753242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69574820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform 4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70788720}
   - component: {fileID: 70788721}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 133704752}
   - component: {fileID: 133704754}
   - component: {fileID: 133704753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141902374}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,10 +698,11 @@ GameObject:
   - component: {fileID: 153551839}
   - component: {fileID: 153551843}
   - component: {fileID: 153551844}
+  - component: {fileID: 153551851}
   - component: {fileID: 153551847}
   - component: {fileID: 153551848}
-  - component: {fileID: 153551846}
   - component: {fileID: 153551849}
+  - component: {fileID: 153551850}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -755,7 +756,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 4abd489e9ec12b743b40c55dfe5b6bd4, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -775,7 +776,7 @@ Transform:
   m_GameObject: {fileID: 153551838}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: -1.4, z: 0}
+  m_LocalPosition: {x: -4.52, y: -1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -807,41 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be4e3b0ba6496c4abe679b734227e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &153551846
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153551838}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  anim: {fileID: 0}
+  rayDistance: 0.6
 --- !u!114 &153551847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,6 +857,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &153551850
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0132808685, y: 1.2484094}
+  m_Size: {x: 0.792181, y: 2.407781}
+  m_Direction: 0
+--- !u!114 &153551851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e847d9da841a4545bb76dddd9fb612f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &155324148
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +916,7 @@ GameObject:
   - component: {fileID: 155324149}
   - component: {fileID: 155324151}
   - component: {fileID: 155324150}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1046,7 @@ GameObject:
   - component: {fileID: 199093788}
   - component: {fileID: 199093790}
   - component: {fileID: 199093789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237261485}
   - component: {fileID: 237261486}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1349,7 @@ GameObject:
   - component: {fileID: 288722953}
   - component: {fileID: 288722955}
   - component: {fileID: 288722954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,7 +1478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293290259}
   - component: {fileID: 293290260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1563,7 @@ GameObject:
   - component: {fileID: 294013464}
   - component: {fileID: 294013466}
   - component: {fileID: 294013465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1693,7 @@ GameObject:
   - component: {fileID: 307355436}
   - component: {fileID: 307355438}
   - component: {fileID: 307355437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407186927}
   - component: {fileID: 407186928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582250977}
   - component: {fileID: 582250978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2602,7 +2618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731786505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2641,7 +2657,7 @@ GameObject:
   - component: {fileID: 738875765}
   - component: {fileID: 738875767}
   - component: {fileID: 738875766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2906,7 +2922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804406754}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834969163}
   - component: {fileID: 834969164}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3102,7 +3118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885690543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3188,7 +3204,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4cbd2c8af102d604e9077ab9f46fa1e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3207,13 +3223,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919424158}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 153551842}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &944698149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,7 +3240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944698150}
   - component: {fileID: 944698151}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1026036145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3597,7 +3613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172886135}
   - component: {fileID: 1172886136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3756,7 +3772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252751707}
   - component: {fileID: 1252751708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1259707244}
   - component: {fileID: 1259707245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3925,7 +3941,7 @@ GameObject:
   - component: {fileID: 1296067389}
   - component: {fileID: 1296067391}
   - component: {fileID: 1296067390}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4111,7 +4127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314967535}
   - component: {fileID: 1314967536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4201,7 +4217,7 @@ GameObject:
   - component: {fileID: 1336908930}
   - component: {fileID: 1336908932}
   - component: {fileID: 1336908931}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4452,7 +4468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433493724}
   - component: {fileID: 1433493725}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4736,7 +4752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1531806086}
   - component: {fileID: 1531806087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1548169857}
   - component: {fileID: 1548169858}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +5010,7 @@ GameObject:
   - component: {fileID: 1580042036}
   - component: {fileID: 1580042038}
   - component: {fileID: 1580042037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5395,7 +5411,7 @@ GameObject:
   - component: {fileID: 1711841554}
   - component: {fileID: 1711841556}
   - component: {fileID: 1711841555}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5525,7 +5541,7 @@ GameObject:
   - component: {fileID: 1739777858}
   - component: {fileID: 1739777860}
   - component: {fileID: 1739777859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5759,7 +5775,7 @@ GameObject:
   - component: {fileID: 1819603657}
   - component: {fileID: 1819603659}
   - component: {fileID: 1819603658}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5889,7 +5905,7 @@ GameObject:
   - component: {fileID: 1835283266}
   - component: {fileID: 1835283268}
   - component: {fileID: 1835283267}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6024,7 +6040,7 @@ GameObject:
   - component: {fileID: 1865870695}
   - component: {fileID: 1865870697}
   - component: {fileID: 1865870696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6290,7 +6306,7 @@ GameObject:
   - component: {fileID: 2058783417}
   - component: {fileID: 2058783419}
   - component: {fileID: 2058783418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jaschik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6582,7 +6598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4517342957479720020, guid: 9a5fd490c7820804784b70f7ea8445ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.23
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4517342957479720020, guid: 9a5fd490c7820804784b70f7ea8445ae, type: 3}
       propertyPath: m_LocalPosition.z
