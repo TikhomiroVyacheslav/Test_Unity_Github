@@ -4,6 +4,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Animator anim;
+    public bool isAttacking = false;
     
     void Start()
     {
@@ -13,13 +14,20 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Attack_func();
+        anim.SetBool("attack", isAttacking);
+    }
+
+    private void Attack_func()
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetBool("attack", true);
+            isAttacking = true;
         }
-        else 
-        {
-            anim.SetBool("attack", false);
-        }
+    }
+
+    private void Attack_false()
+    {
+        isAttacking = false;
     }
 }

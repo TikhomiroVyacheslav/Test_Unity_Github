@@ -740,6 +740,8 @@ MonoBehaviour:
   aliveHeart: {fileID: 21300000, guid: d21e96857e8a6ff4a8e76ec93e15069e, type: 3}
   deadHeart: {fileID: 21300000, guid: 91d8d2b07907a0d4fabba59a37f83c05, type: 3}
   coins: 0
+  rayDistance: 0.6
+  isGrounded: 0
 --- !u!50 &153551840
 Rigidbody2D:
   serializedVersion: 4
@@ -808,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be4e3b0ba6496c4abe679b734227e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 153551849}
   rayDistance: 0.6
 --- !u!114 &153551847
 MonoBehaviour:
@@ -904,7 +906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e847d9da841a4545bb76dddd9fb612f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 153551849}
+  isAttacking: 0
 --- !u!1 &155324148
 GameObject:
   m_ObjectHideFlags: 0

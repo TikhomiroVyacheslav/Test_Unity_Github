@@ -28,10 +28,12 @@ public class Jump : MonoBehaviour
 
     private void Update()
     {
-        CheckGround();
+        /*CheckGround();*/
         ball = GetComponent<BallChar>();
         jumpForce = ball.jumpForce;
         isDoubleJump = ball.isDoubleJump;
+        isGrounded = ball.isGrounded;
+        anim.SetBool("isGroundedAn", isGrounded);
         if (Input.GetButtonDown("Jump"))
         {
             
@@ -56,7 +58,7 @@ public class Jump : MonoBehaviour
     }*/
 
 
-    private void CheckGround()
+    /*private void CheckGround()
     {
         RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayDistance, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
@@ -69,7 +71,7 @@ public class Jump : MonoBehaviour
             isGrounded = false;
             anim.SetBool("isGroundedAn", false);
         }
-    }
+    }*/
 
     /*private void CheckGround()
     {

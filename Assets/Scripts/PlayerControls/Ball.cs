@@ -18,4 +18,31 @@ public class BallChar : MonoBehaviour
     [SerializeField] public Sprite deadHeart;
 
     [SerializeField] public int coins = 0;
+
+    private Rigidbody2D rb;
+    public float rayDistance = 0.6f;
+    [SerializeField] public bool isGrounded;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        CheckGround();
+    }
+
+    private void CheckGround()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(rb.position, Vector2.down, rayDistance, LayerMask.GetMask("Ground"));
+        if (hit.collider != null)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
 }
