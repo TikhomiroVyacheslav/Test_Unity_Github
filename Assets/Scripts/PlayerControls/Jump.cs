@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour
     private float jumpForce;
     private bool isDoubleJump;
     private bool isGrounded = false;
-    private bool doubleJump;
+    public bool doubleJump;
     public Animator anim;
 
     private Rigidbody2D rb;
