@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a276bf941605ff941b7ea515beca860c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalMove: 0
   anim: {fileID: 153551849}
   dashing: 0
   dashCooldowned: 1
