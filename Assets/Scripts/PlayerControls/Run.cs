@@ -6,7 +6,7 @@ public class Run : MonoBehaviour
 {
     private BallChar ball;
     private float speed;
-    private float horizontalMove;
+    [SerializeField] public float horizontalMove;
     public Animator anim;
     [SerializeField] private bool dashing;
     public bool dashCooldowned = true;
@@ -41,7 +41,7 @@ public class Run : MonoBehaviour
         speed = ball.speed;
         isAttacking = anim.GetBool("attack");
         Vector3 dir = transform.right * horizontalInput;
-        if (!dashing)
+        if (!ball.isDashing)
         {
             TransformDirection(horizontalInput);
         }
@@ -68,8 +68,8 @@ public class Run : MonoBehaviour
         }
         else if (Input.GetButton("Horizontal") && !isAttacking && !ball.isDashing)
         {
-            ball.isRunning = false;
-            ball.isDashing = false;
+            /*ball.isRunning = false;
+            ball.isDashing = false;*/
             RunFunc(dir);
         }
         else

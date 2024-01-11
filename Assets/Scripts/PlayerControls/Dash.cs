@@ -49,7 +49,7 @@ public class Dash : MonoBehaviour
         /*StartCoroutine(DashDuration(dir));*/
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * dashSpeed * Time.deltaTime);
         anim.SetInteger("State", 1);
-        anim.SetFloat("Horizontal_move", horizontalMove);
+        anim.SetFloat("Horizontal_move", run.horizontalMove);
     }
 
     private IEnumerator DashDuration()
