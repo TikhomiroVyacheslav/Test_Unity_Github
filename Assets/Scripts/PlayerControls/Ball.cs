@@ -5,23 +5,48 @@ using UnityEngine.UI;
 
 public class BallChar : MonoBehaviour
 {
-    [SerializeField] public float speed = 3f;
-    [SerializeField] public float jumpForce = 5f;
-    [SerializeField] public bool isDoubleJump = false;
-    [SerializeField] public bool isFastRun = false;
+    [Header("HP system")]
+    [SerializeField]
+    public int lives = 5;
+    public int maxLives = 5;
+    public Image[] hearts;
+    public Sprite aliveHeart;
+    public Sprite deadHeart;
 
-    [SerializeField] public int lives = 5;
-    [SerializeField] public int maxLives = 5;
-    [SerializeField] public Image[] hearts;
-    [SerializeField] public Image[] boosters;
-    [SerializeField] public Sprite aliveHeart;
-    [SerializeField] public Sprite deadHeart;
+    [Header("Character specs")]
+    [SerializeField]
+    public float speed = 3f;
+    public float jumpForce = 5f;
+    public float dashDuration = 0.3f;
 
-    [SerializeField] public int coins = 0;
+    [Header("Boosters")]
+    [SerializeField]
+    public Image[] boosters;
+    public bool isDoubleJump = false;
+    public bool isFastRun = false;
+
+    [Header("Coins")]
+    [SerializeField]
+    public int coins = 0;
+
+    [Header("Stamina")]
+    [SerializeField]
+    public float maxStamina;
+    public float stamina;
+    public float runStaminaConsumption;
+    public float dashStaminaConsumption;
+    public float dashStaminaNeed;
+    public float staminaRecoveringSpeed;
+    public bool staminaConsuming;
+
+    [Header("Movement")]
+    [SerializeField]
+    public bool isRunning;
+    public bool isDashing;
+    public bool isGrounded;
+    public float rayDistance = 0.6f;
 
     private Rigidbody2D rb;
-    public float rayDistance = 0.6f;
-    [SerializeField] public bool isGrounded;
 
     private void Awake()
     {
@@ -31,7 +56,10 @@ public class BallChar : MonoBehaviour
     private void Update()
     {
         CheckGround();
+        dashStaminaNeed = dashDuration * dashStaminaConsumption;
     }
+        
+
 
     private void CheckGround()
     {
