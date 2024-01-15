@@ -16,6 +16,9 @@ public class BallChar : MonoBehaviour
     [Header("Character specs")]
     [SerializeField]
     public float speed = 3f;
+    public float fastRunMultiplier = 2f;
+    public float dashMultiplier = 4f;
+    public float dashCooldown = 1.0f;
     public float jumpForce = 5f;
     public float dashDuration = 0.3f;
 
@@ -45,6 +48,20 @@ public class BallChar : MonoBehaviour
     public bool isDashing;
     public bool isGrounded;
     public float rayDistance = 0.6f;
+    public string movementCondition;
+    public float horizontalInput;
+    public Vector3 moveDirection;
+    public float dashTimer;
+    public Vector3 dashDirection;
+    public bool dashCooldowned = true;
+
+    [Header("Movement Conditions")]
+    [SerializeField]
+    public string IS_RUNNING = "running";
+    public string IS_FAST_RUNNING = "fast running";
+    public string IS_DASHING = "dashing";
+    public string IS_STANDING = "standing";
+    public string IS_JUMPING = "jumping";
 
     private Rigidbody2D rb;
 
@@ -56,7 +73,8 @@ public class BallChar : MonoBehaviour
     private void Update()
     {
         CheckGround();
-        dashStaminaNeed = dashDuration * dashStaminaConsumption;
+        CheckDirection();
+        dashStaminaConsumption = dashDuration * dashStaminaNeed;
     }
         
 
@@ -72,5 +90,12 @@ public class BallChar : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    private void CheckDirection()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        moveDirection = transform.right * horizontalInput;
+
     }
 }

@@ -792,6 +792,11 @@ GameObject:
   - component: {fileID: 153551848}
   - component: {fileID: 153551852}
   - component: {fileID: 153551853}
+  - component: {fileID: 153551855}
+  - component: {fileID: 153551854}
+  - component: {fileID: 153551856}
+  - component: {fileID: 153551857}
+  - component: {fileID: 153551858}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -822,6 +827,9 @@ MonoBehaviour:
   aliveHeart: {fileID: 21300000, guid: d21e96857e8a6ff4a8e76ec93e15069e, type: 3}
   deadHeart: {fileID: 21300000, guid: 91d8d2b07907a0d4fabba59a37f83c05, type: 3}
   speed: 5
+  fastRunMultiplier: 2
+  dashMultiplier: 4
+  dashCooldown: 1
   jumpForce: 5
   dashDuration: 0.3
   boosters:
@@ -831,16 +839,27 @@ MonoBehaviour:
   isFastRun: 0
   coins: 0
   maxStamina: 100
-  stamina: 100
+  stamina: 50
   runStaminaConsumption: 4
-  dashStaminaConsumption: 30
-  dashStaminaNeed: 0
+  dashStaminaConsumption: 0
+  dashStaminaNeed: 30
   staminaRecoveringSpeed: 2
   staminaConsuming: 0
   isRunning: 0
   isDashing: 0
   isGrounded: 0
   rayDistance: 0.6
+  movementCondition: 
+  horizontalInput: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  dashTimer: 0
+  dashDirection: {x: 0, y: 0, z: 0}
+  dashCooldowned: 1
+  IS_RUNNING: running
+  IS_FAST_RUNNING: fast running
+  IS_DASHING: dashing
+  IS_STANDING: standing
+  IS_JUMPING: jumping
 --- !u!50 &153551840
 Rigidbody2D:
   serializedVersion: 4
@@ -891,7 +910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153551838}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a276bf941605ff941b7ea515beca860c, type: 3}
   m_Name: 
@@ -905,7 +924,7 @@ MonoBehaviour:
   horizontalInput: 0
   dashDir: {x: 0, y: 0, z: 0}
   staminaConsuming: 0
-  testTimer: 0.3
+  testTimer: 0
 --- !u!114 &153551844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1043,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153551838}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c939e7a434fbd514b97ae596820db0a2, type: 3}
   m_Name: 
@@ -1039,7 +1058,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153551838}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5403e564dd20bb44ea21c78c8ee70af9, type: 3}
   m_Name: 
@@ -1052,6 +1071,78 @@ MonoBehaviour:
   dashCooldown: 1
   dashDuration: 0.3
   dashing: 0
+--- !u!114 &153551854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d130ef29b4c0ef64e813b4083ab16e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 153551839}
+  animationManager: {fileID: 153551856}
+--- !u!114 &153551855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c17e217d55dd264e97b9d0cfdfc1bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 153551839}
+  run: {fileID: 153551854}
+  animationManager: {fileID: 153551856}
+--- !u!114 &153551856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2971db8b5b70609458af09eafe2af7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 153551849}
+  ball: {fileID: 153551839}
+--- !u!114 &153551857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b58f069a52dba445885de22f8e18409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 153551839}
+  animationManager: {fileID: 153551856}
+--- !u!114 &153551858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153551838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2992ed9abbcb0da4e8639492c17ef2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 153551839}
+  staminaBar: {fileID: 860817861}
+  staminaBarMax: {fileID: 895616205}
 --- !u!1 &155324148
 GameObject:
   m_ObjectHideFlags: 0

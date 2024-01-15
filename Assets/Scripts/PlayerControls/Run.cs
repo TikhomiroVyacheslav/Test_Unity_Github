@@ -41,10 +41,11 @@ public class Run : MonoBehaviour
         speed = ball.speed;
         isAttacking = anim.GetBool("attack");
         Vector3 dir = transform.right * horizontalInput;
-        if (!ball.isDashing)
+        /*if (!ball.isDashing)
         {
             TransformDirection(horizontalInput);
-        }
+        }*/
+        TransformDirection(horizontalInput);
 
         if (Input.GetButton("Horizontal") && Input.GetKey(KeyCode.LeftShift) && ball.isFastRun && ball.isGrounded && !ball.isDashing && ball.runStaminaConsumption < ball.stamina && !isAttacking)
         {
